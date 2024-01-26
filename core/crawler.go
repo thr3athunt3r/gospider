@@ -193,7 +193,7 @@ func NewCrawler(site *url.URL, cmd *cobra.Command) *Crawler {
 
 	// Set User-Agent
 	randomUA, _ := cmd.Flags().GetString("user-agent")
-	switch ua := strings.ToLower(randomUA); {
+	switch ua := randomUA; {
 	case ua == "mobi":
 		extensions.RandomMobileUserAgent(c)
 	case ua == "web":
